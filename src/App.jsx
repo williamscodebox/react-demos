@@ -16,6 +16,8 @@ import FocusInput from "./components/FocusInput";
 import Timer from "./components/Timer";
 import useFetch from "./hooks/useFetch";
 import UniqueID from "./components/UniqueID";
+import CounterProject from "./components/CounterProject";
+import TodosProject from "./components/TodosProject";
 
 // export const Data = createContext();
 
@@ -24,8 +26,7 @@ function App() {
   const [data] = useFetch("https://jsonplaceholder.typicode.com/todos");
   return (
     <div style={{ margin: 5, padding: 10 }}>
-      <UniqueID />
-      <UniqueID />
+      <TodosProject />
       {/* <UserProvider>
         <UserProfile />
         <UpdateUser />
