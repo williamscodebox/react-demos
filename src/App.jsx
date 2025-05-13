@@ -11,49 +11,15 @@ import ComponentA from "./components/ComponentA";
 import UserProfile from "./components/UserProfile";
 import { UserProvider } from "./providers/UserContext";
 import UpdateUser from "./components/UpdateUser";
+import Counter from "./components/Counter";
 
 // export const Data = createContext();
-const initialState = { count: 0 };
-const reducer = (state, action) => {
-  switch (action.type) {
-    case "increment":
-      return { ...state, count: state.count + 1 };
-    case "decrement":
-      return { ...state, count: state.count - 1 };
-    case "reset":
-      return { ...state, count: 0 };
-
-    default:
-      return state;
-  }
-};
 
 function App() {
-  const [state, dispatch] = useReducer(reducer, initialState);
   const name = "JimBobJoe";
   return (
     <div style={{ margin: 5, padding: 10 }}>
-      <div style={{ display: "flex", gap: 15 }}>
-        <button
-          style={{ padding: 20, marginBottom: 15, marginTop: 15 }}
-          onClick={() => dispatch({ type: "increment" })}
-        >
-          +
-        </button>
-        <h1>Count: {state.count}</h1>
-        <button
-          style={{ padding: 20, marginBottom: 15, marginTop: 15 }}
-          onClick={() => dispatch({ type: "decrement" })}
-        >
-          -
-        </button>
-      </div>
-      <button
-        style={{ marginLeft: 100 }}
-        onClick={() => dispatch({ type: "reset" })}
-      >
-        Reset
-      </button>
+      <Counter />
       {/* <UserProvider>
         <UserProfile />
         <UpdateUser />
