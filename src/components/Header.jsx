@@ -5,15 +5,29 @@ import { IoIosContact } from "react-icons/io";
 
 function Header() {
   return (
-    <div>
-      <h1>Welcome to my website</h1>
-      <nav>
-        <FaHome />
-        <a href="">Home</a>
-        <FaCircleInfo />
-        <a href="">About</a>
-        <IoIosContact />
-        <a href="">Contact</a>
+    <div style={{ paddingBottom: 20 }}>
+      <nav
+        style={{
+          display: "flex",
+          width: "100%",
+
+          justifyContent: "space-between",
+        }}
+      >
+        <div>
+          <FaHome />
+          <a href="">Home</a>
+        </div>
+        <div style={{ display: "flex", gap: 8 }}>
+          <div>
+            <FaCircleInfo />
+            <a href="">About</a>
+          </div>
+          <div>
+            <IoIosContact />
+            <a href="">Contact</a>
+          </div>
+        </div>
       </nav>
     </div>
   );
