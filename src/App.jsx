@@ -15,6 +15,7 @@ import Counter from "./components/Counter";
 import FocusInput from "./components/FocusInput";
 import Timer from "./components/Timer";
 import useFetch from "./hooks/useFetch";
+import UniqueID from "./components/UniqueID";
 
 // export const Data = createContext();
 
@@ -23,11 +24,8 @@ function App() {
   const [data] = useFetch("https://jsonplaceholder.typicode.com/todos");
   return (
     <div style={{ margin: 5, padding: 10 }}>
-      {data &&
-        data.map((item) => {
-          return <p key={item.id}>{item.title}</p>;
-        })}
-
+      <UniqueID />
+      <UniqueID />
       {/* <UserProvider>
         <UserProfile />
         <UpdateUser />
