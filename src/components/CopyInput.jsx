@@ -1,7 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
+import PopupContent from "./PopupContent";
 
 function CopyInput() {
-  return <div>CopyInput</div>;
+  const [inputValue, setInputValue] = useState("");
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText(inputValue).then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 6000);
+    });
+  };
+
+  return (
+    <div>
+      <input
+        type={inputValue}
+        onChange={(e) => setInputValue(e.target.value)}
+      />
+      <button onClick={handleCopy}>Copy</button>
+      <PopupContent copied={copied} />
+    </div>
+  );
 }
 
 export default CopyInput;

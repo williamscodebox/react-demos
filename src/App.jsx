@@ -5,11 +5,14 @@ import MainContent from "./components/MainContent";
 import Footer from "./components/Footer";
 import Button from "./components/Button";
 import CopyInput from "./components/CopyInput";
+import Switcher from "./components/Switcher";
 
 function App() {
   return (
     <div style={{ margin: 5, padding: 10 }}>
       <CopyInput />
+      <Switcher />
+
       {/* <Header />
       <MainContent />
       <Greet></Greet>
