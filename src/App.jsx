@@ -13,6 +13,7 @@ import { UserProvider } from "./providers/UserContext";
 import UpdateUser from "./components/UpdateUser";
 import Counter from "./components/Counter";
 import FocusInput from "./components/FocusInput";
+import Timer from "./components/Timer";
 
 // export const Data = createContext();
 
@@ -20,7 +21,7 @@ function App() {
   const name = "JimBobJoe";
   return (
     <div style={{ margin: 5, padding: 10 }}>
-      <FocusInput />
+      <Timer />
       {/* <UserProvider>
         <UserProfile />
         <UpdateUser />
