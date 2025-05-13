@@ -1,5 +1,5 @@
 import React from "react";
-import { createContext } from "react";
+import { createContext, useReducer } from "react";
 import Greet from "./components/Greet";
 import Header from "./components/Header";
 import MainContent from "./components/MainContent";
@@ -13,15 +13,40 @@ import { UserProvider } from "./providers/UserContext";
 import UpdateUser from "./components/UpdateUser";
 
 // export const Data = createContext();
+const initialState = { count: 0 };
+const reducer = (state, action) => {
+  switch (action.type) {
+    case "increment":
+      return { ...state, count: state.count + 1 };
+    case "decrement":
+      return { ...state, count: state.count - 1 };
+    case "reset":
+      return { ...state, count: 0 };
+
+    default:
+      return state;
+  }
+};
 
 function App() {
+  const [state, dispatch] = useReducer(reducer, initialState);
   const name = "JimBobJoe";
   return (
     <div style={{ margin: 5, padding: 10 }}>
-      <UserProvider>
+      <div style={{ display: "flex", gap: 15 }}>
+        <button style={{ padding: 20, marginBottom: 15, marginTop: 15 }}>
+          +
+        </button>
+        <h1>Count: {state.count}</h1>
+        <button style={{ padding: 20, marginBottom: 15, marginTop: 15 }}>
+          -
+        </button>
+      </div>
+      <button style={{ marginLeft: 100 }}>Reset</button>
+      {/* <UserProvider>
         <UserProfile />
         <UpdateUser />
-      </UserProvider>
+      </UserProvider> */}
       {/* //   <Data.Provider value={name}>
     //     <CopyInput />
     //     <Switcher />
