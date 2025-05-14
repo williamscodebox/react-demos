@@ -35,7 +35,7 @@ function ToggleBackground() {
 
 export default ToggleBackground;
 
-// add these styles to a indexedDB.css file to style this project
+// add these styles to a index.css file to style this project
 
 // @import url("https://fonts.googleapis.com/css2?family=Bungee+Outline&display=swap");
 

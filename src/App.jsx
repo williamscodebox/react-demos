@@ -9,6 +9,7 @@ import MealsProject from "./components/MealsProject";
 import CalculatorProject from "./components/CalculatorProject";
 import ToggleBackground from "./components/ToggleBackground";
 import SearchIconProject from "./components/SearchIconProject";
+import TestamonialsProject from "./components/TestamonialsProject";
 
 // export const Data = createContext();
 
@@ -17,7 +18,7 @@ function App() {
   const [data] = useFetch("https://jsonplaceholder.typicode.com/todos");
   return (
     <div style={{ margin: 5, padding: 10 }}>
-      <SearchIconProject />
+      <TestamonialsProject />
       {/* <UserProvider>
         <UserProfile />
         <UpdateUser />
