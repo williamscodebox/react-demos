@@ -10,6 +10,9 @@ import CalculatorProject from "./components/CalculatorProject";
 import ToggleBackground from "./components/ToggleBackground";
 import SearchIconProject from "./components/SearchIconProject";
 import TestamonialsProject from "./components/TestamonialsProject";
+import AccordionProject from "./components/AccordionProject";
+
+import { accordionData } from "./utils/content";
 
 // export const Data = createContext();
 
@@ -18,7 +21,12 @@ function App() {
   const [data] = useFetch("https://jsonplaceholder.typicode.com/todos");
   return (
     <div style={{ margin: 5, padding: 10 }}>
-      <TestamonialsProject />
+      <div className="accordion">
+        {accordionData.map(({ title, content }) => (
+          <AccordionProject title={title} content={content} />
+        ))}
+      </div>
+
       {/* <UserProvider>
         <UserProfile />
         <UpdateUser />
