@@ -1,23 +1,11 @@
 import React from "react";
 import { createContext, useRef } from "react";
 import Greet from "./components/Greet";
-import Header from "./components/Header";
-import MainContent from "./components/MainContent";
-import Footer from "./components/Footer";
-import Button from "./components/Button";
-import CopyInput from "./components/CopyInput";
-import Switcher from "./components/Switcher";
-import ComponentA from "./components/ComponentA";
-import UserProfile from "./components/UserProfile";
-import { UserProvider } from "./providers/UserContext";
-import UpdateUser from "./components/UpdateUser";
-import Counter from "./components/Counter";
-import FocusInput from "./components/FocusInput";
-import Timer from "./components/Timer";
 import useFetch from "./hooks/useFetch";
 import UniqueID from "./components/UniqueID";
 import CounterProject from "./components/CounterProject";
 import TodosProject from "./components/TodosProject";
+import MealsProject from "./components/MealsProject";
 
 // export const Data = createContext();
 
@@ -26,7 +14,7 @@ function App() {
   const [data] = useFetch("https://jsonplaceholder.typicode.com/todos");
   return (
     <div style={{ margin: 5, padding: 10 }}>
-      <TodosProject />
+      <MealsProject />
       {/* <UserProvider>
         <UserProfile />
         <UpdateUser />
