@@ -1,7 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
+import Recommended from "./components/E-CommerceAdvanceFiltering/Recommended/Recommended.jsx";
+import "./index.css";
 
 function App() {
-  return <div>App</div>;
+  const [selectedCategory, setSelectedCategory] = useState(null);
+
+  // ------------ Button Filtering -----------
+  const handleClick = (event) => {
+    setSelectedCategory(event.target.value);
+  };
+
+  return (
+    <>
+      <Recommended handleClick={handleClick} />
+    </>
+  );
 }
 
 export default App;
