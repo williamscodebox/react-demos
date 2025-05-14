@@ -1,8 +1,52 @@
-import React from "react";
+import { React, useState } from "react";
 import "../index.css";
 
+// Needs better process of generating unique IDs
+// This is a simple way to generate unique IDs, but it is not foolproof.
+// In a real-world application, you would want to use a more robust method of generating unique IDs, such as uuid or a library like nanoid.
+function generateId() {
+  return Math.floor(Math.random() * 10);
+}
+
 function TodosProject() {
-  return <div>TodosProject</div>;
+  const [todos, setTodos] = useState([]);
+  const [input, setInput] = useState("");
+
+  const handleSubmit = () => {
+    setTodos((todos) =>
+      todos.concat({
+        text: input,
+        id: generateId(),
+      })
+    );
+    setInput("");
+  };
+
+  const removeTodo = (id) =>
+    setTodos((todos) => todos.filter((t) => t.id !== id));
+
+  return (
+    <div className="container">
+      <input
+        type="test"
+        placeholder="New Todo"
+        value={input}
+        onChange={(e) => setInput(e.target.value)}
+      />
+      <button onClick={handleSubmit}>Submit</button>
+
+      <ul className="todos-list">
+        {todos.map(({ text, id }) => (
+          <li key={id} className="todo">
+            <span>{text}</span>
+            <button className="close" onClick={() => removeTodo(id)}>
+              X
+            </button>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
 }
 
 export default TodosProject;
