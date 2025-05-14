@@ -9,6 +9,8 @@ function CalculatorProject() {
   }
 
   function calculate() {
+    // do not use eval in production code
+    // it is dangerous and can lead to security issues
     var answers = eval(inputvalue);
     setinputvalue(answers);
   }
