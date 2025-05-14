@@ -6,6 +6,7 @@ import UniqueID from "./components/UniqueID";
 import CounterProject from "./components/CounterProject";
 import TodosProject from "./components/TodosProject";
 import MealsProject from "./components/MealsProject";
+import CalculatorProject from "./components/CalculatorProject";
 
 // export const Data = createContext();
 
@@ -14,7 +15,7 @@ function App() {
   const [data] = useFetch("https://jsonplaceholder.typicode.com/todos");
   return (
     <div style={{ margin: 5, padding: 10 }}>
-      <MealsProject />
+      <CalculatorProject />
       {/* <UserProvider>
         <UserProfile />
         <UpdateUser />
