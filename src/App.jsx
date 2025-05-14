@@ -13,6 +13,7 @@ import TestamonialsProject from "./components/TestamonialsProject";
 import AccordionProject from "./components/AccordionProject";
 
 import { accordionData } from "./utils/content";
+import FormValidation from "./components/FormValidation";
 
 // export const Data = createContext();
 
@@ -21,11 +22,7 @@ function App() {
   const [data] = useFetch("https://jsonplaceholder.typicode.com/todos");
   return (
     <div style={{ margin: 5, padding: 10 }}>
-      <div className="accordion">
-        {accordionData.map(({ title, content }) => (
-          <AccordionProject title={title} content={content} />
-        ))}
-      </div>
+      <FormValidation />
 
       {/* <UserProvider>
         <UserProfile />
