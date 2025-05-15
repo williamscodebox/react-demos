@@ -24,3 +24,8 @@ li {
   color: #323232;
   cursor: pointer;
 }
+@media only screen and (max-height: 800px) {
+  body {
+    background-color: lightblue;
+  }
+}
